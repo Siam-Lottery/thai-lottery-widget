@@ -2,8 +2,8 @@
 /*
 Plugin Name: Thai Lottery Widget
 Plugin URI: https://www.lottery.co.th/code
-Description: แสดงผลสลากกินแบ่งรัฐบาลไทย พร้อมระบบตรวจหวยงวดล่าสุด ==เพิ่มการแสดงผล Widget ได้ที่หน้า <a href="widgets.php">วิดเจ็ต</a>== =*การใช้งาน Shortcode*=  <strong>[thailottery width="300" height="640"]</strong> นำโค้ดนี้ไปวางในส่วนของหน้าเพจหรือหน้าเนื้อหาเพื่อแสดงผล *** width=ความกว้าง ค่าปกติ 300, height=ความสูง ค่าปกติ 640
-Version: 1.2
+Description: แสดงผลสลากกินแบ่งรัฐบาลไทย พร้อมระบบตรวจหวยงวดล่าสุด ==เพิ่มการแสดงผล Widget ได้ที่หน้า <a href="widgets.php">วิดเจ็ต</a>== =*การใช้งาน Shortcode*=  <strong>[thailottery width="300" height="650"]</strong> นำโค้ดนี้ไปวางในส่วนของหน้าเพจหรือหน้าเนื้อหาเพื่อแสดงผล *** width=ความกว้าง ค่าปกติ 300, height=ความสูง ค่าปกติ 640
+Version: 1.4
 Author: siamlottery
 Author URI: https://www.lottery.co.th
 License: GPL2
@@ -35,7 +35,7 @@ if( $instance) {
 } else {
      $title = '';
      $width = '300';
-     $height = '640';
+     $height = '650';
 }
 ?>
 <p>
@@ -54,9 +54,9 @@ if( $instance) {
 </p>
 <p>
 การใช้งาน Shortcode<br/>
-<strong>[thailottery width="300" height="640"]</strong><br/>
+<strong>[thailottery width="300" height="650"]</strong><br/>
 นำโค้ดด้านบนนี้ไปวางในส่วนของหน้าเพจหรือหน้าเนื้อหาเพื่อแสดงผล
-<br/><em>width=ความกว้าง ค่าปกติ 300, height=ความสูง ค่าปกติ 640</em>
+<br/><em>width=ความกว้าง ค่าปกติ 300, height=ความสูง ค่าปกติ 650</em>
 </p>
 <?php
 }
@@ -91,7 +91,7 @@ $mywidth='300';
   if($height) {
       $myheight=$height;
    }else{
-$myheight='640';
+$myheight='650';
 }
    echo '<iframe src=https://www.lottery.co.th/share width='.$mywidth.' height='.$myheight.' frameborder=0></iframe>';
    echo $after_widget;
@@ -101,7 +101,7 @@ $myheight='640';
 function sthailottery($atts, $content = null ) {
     $a = shortcode_atts( array(
         'width' => '300',
-        'height' => '640',
+        'height' => '650',
     ), $atts );
        return '<iframe src=https://www.lottery.co.th/share width='.$a['width'].' height='.$a['height'].' frameborder=0></iframe>';
 }
