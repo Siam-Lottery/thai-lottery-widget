@@ -2,8 +2,8 @@
 /*
 Plugin Name: Thai Lottery Widget
 Plugin URI: https://www.lottery.co.th/code
-Description: แสดงผลสลากกินแบ่งรัฐบาลไทย พร้อมระบบตรวจหวยงวดล่าสุด ==เพิ่มการแสดงผล Widget ได้ที่หน้า <a href="widgets.php">วิดเจ็ต</a>== =*การใช้งาน Shortcode*=  <strong>[thailottery width="300" height="650"]</strong> นำโค้ดนี้ไปวางในส่วนของหน้าเพจหรือหน้าเนื้อหาเพื่อแสดงผล *** width=ความกว้าง ค่าปกติ 300, height=ความสูง ค่าปกติ 640
-Version: 1.4
+Description: แสดงผลสลากกินแบ่งรัฐบาลไทย พร้อมระบบตรวจหวยงวดล่าสุด ==เพิ่มการแสดงผล Widget ได้ที่หน้า <a href="widgets.php">วิดเจ็ต</a>== =*การใช้งาน Shortcode*=  <strong>[thailottery width="100%" height="650"]</strong> นำโค้ดนี้ไปวางในส่วนของหน้าเพจหรือหน้าเนื้อหาเพื่อแสดงผล *** width=ความกว้าง ค่าปกติ 100%, height=ความสูง ค่าปกติ 650
+Version: 1.5
 Author: siamlottery
 Author URI: https://www.lottery.co.th
 License: GPL2
@@ -34,7 +34,7 @@ if( $instance) {
      $height = esc_attr($instance['height']);
 } else {
      $title = '';
-     $width = '300';
+     $width = '100%';
      $height = '650';
 }
 ?>
@@ -44,19 +44,19 @@ if( $instance) {
 </p>
 <p>
 <label for="<?php echo $this->get_field_id('width'); ?>"><?php _e('ขนาดความกว้าง', 'wp_widget_plugin'); ?></label>
-(ค่าปกติ 300)
+(ค่าปกติ 100%)
 <input class="widefat" id="<?php echo $this->get_field_id('width'); ?>" name="<?php echo $this->get_field_name('width'); ?>" type="text" value="<?php echo $width; ?>" />
 </p>
 <p>
 <label for="<?php echo $this->get_field_id('height'); ?>"><?php _e('ขนาดความสูง', 'wp_widget_plugin'); ?></label>
-(ค่าปกติ 640)
+(ค่าปกติ 650)
 <input class="widefat" id="<?php echo $this->get_field_id('height'); ?>" name="<?php echo $this->get_field_name('height'); ?>" type="text" value="<?php echo $height; ?>" />
 </p>
 <p>
 การใช้งาน Shortcode<br/>
-<strong>[thailottery width="300" height="650"]</strong><br/>
+<strong>[thailottery width="100%" height="650"]</strong><br/>
 นำโค้ดด้านบนนี้ไปวางในส่วนของหน้าเพจหรือหน้าเนื้อหาเพื่อแสดงผล
-<br/><em>width=ความกว้าง ค่าปกติ 300, height=ความสูง ค่าปกติ 650</em>
+<br/><em>width=ความกว้าง ค่าปกติ 100%, height=ความสูง ค่าปกติ 650</em>
 </p>
 <?php
 }
@@ -86,7 +86,7 @@ function widget($args, $instance) {
   if($width) {
       $mywidth=$width;
    }else{
-$mywidth='300';
+$mywidth='100%';
 }
   if($height) {
       $myheight=$height;
@@ -100,7 +100,7 @@ $myheight='650';
 
 function sthailottery($atts, $content = null ) {
     $a = shortcode_atts( array(
-        'width' => '300',
+        'width' => '100%',
         'height' => '650',
     ), $atts );
        return '<iframe src=https://www.lottery.co.th/share width='.$a['width'].' height='.$a['height'].' frameborder=0></iframe>';
